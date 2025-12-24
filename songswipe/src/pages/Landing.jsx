@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Music, Heart, Sparkles, Zap, Users, X, Check, Play } from 'lucide-react';
 
 const LandingPage = () => {
@@ -44,6 +45,11 @@ const LandingPage = () => {
                         position: relative;
                     }
 
+                    .nav > * {
+                        display: flex;
+                        align-items: center;
+                    }
+
                     .logo-icon {
                         display: flex;
                         align-items: center;
@@ -79,44 +85,31 @@ const LandingPage = () => {
 
                     .nav-buttons {
                         display: flex;
+                        flex-direction: row;
                         gap: 1rem;
                         align-items: center;
                         height: 100%;
                         flex-shrink: 0;
                     }
 
-                    .btn-login {
-                        background: transparent;
-                        border: none;
-                        color: white;
-                        font-size: 1rem;
-                        font-weight: 500;
-                        cursor: pointer;
-                        padding: 0.5rem 1rem;
-                        border-radius: 9999px;
-                        transition: background 0.3s ease;
-                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                    .nav-buttons .btn-login,
+                    .nav-buttons .btn-signup {
+                        height: 2.5rem;
                         display: flex;
                         align-items: center;
                         justify-content: center;
-                        line-height: 1;
-                        text-align: center;
+                        flex-shrink: 0;
                     }
 
-                    .btn-login:hover {
-                        background: rgba(255, 255, 255, 0.1);
-                    }
-
-                    .btn-signup {
-                        background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+                    .btn-login {
+                        background: rgba(74, 20, 140, 0.5);
                         border: none;
                         color: white;
                         font-size: 1rem;
-                        font-weight: 500;
+                        font-weight: 600;
                         cursor: pointer;
-                        padding: 0.5rem 1.5rem;
+                        padding: 0.5rem 1rem;
                         border-radius: 9999px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
                         transition: background 0.3s ease, box-shadow 0.3s ease;
                         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
                         display: flex;
@@ -124,6 +117,42 @@ const LandingPage = () => {
                         justify-content: center;
                         line-height: 1;
                         text-align: center;
+                        text-decoration: none;
+                        height: 2.5rem;
+                        white-space: nowrap;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        box-sizing: border-box;
+                        margin: 0;
+                        position: relative;
+                    }
+
+                    .btn-login:hover {
+                        background: rgba(74, 20, 140, 0.7);
+                        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+                    }
+
+                    .btn-signup {
+                        background: linear-gradient(135deg, #e91e63 0%, #9c27b0 100%);
+                        border: none;
+                        color: white;
+                        font-size: 1rem;
+                        font-weight: 600;
+                        cursor: pointer;
+                        padding: 0.5rem 1.5rem;
+                        border-radius: 9999px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                        transition: background 0.3s ease, box-shadow 0.3s ease;
+                        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        line-height: 1;
+                        text-align: center;
+                        height: 2.5rem;
+                        white-space: nowrap;
+                        box-sizing: border-box;
+                        margin: 0;
+                        position: relative;
                     }
 
                     .btn-signup:hover {
@@ -216,6 +245,9 @@ const LandingPage = () => {
                         align-items: center;
                         justify-content: center;
                         text-align: center;
+                        height: 3rem;
+                        white-space: nowrap;
+                        box-sizing: border-box;
                     }
 
                     .btn-primary:hover {
@@ -240,6 +272,9 @@ const LandingPage = () => {
                         flex: 1;
                         transition: background 0.3s ease, box-shadow 0.3s ease;
                         text-align: center;
+                        height: 3rem;
+                        white-space: nowrap;
+                        box-sizing: border-box;
                     }
 
                     .btn-spotify:hover {
@@ -471,7 +506,7 @@ const LandingPage = () => {
                     <h1>SongSwipe</h1> 
                 </div>
                 <div className='nav-buttons'>
-                    <button className='btn-login'>Log In</button>
+                    <Link to="/login" className='btn-login'>Log In</Link>
                     <button className='btn-signup'>Sign Up</button>
         </div>
         </nav>
